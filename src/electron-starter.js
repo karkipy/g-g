@@ -1,4 +1,5 @@
 // Modules to control application life and create native browser window
+// eslint-disable-next-line
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
