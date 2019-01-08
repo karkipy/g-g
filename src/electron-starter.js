@@ -13,7 +13,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({ width: 800, height: 600 });
 
   // and load the index.html of the app.
-  const startUrl = process.env.ELECTRON_START_URL || url.format({
+  const startUrl = 'http://localhost:3000/' || url.format({
     pathname: path.join(__dirname, '/../build/index.html'),
     protocol: 'file:',
     slashes: true,
