@@ -1,44 +1,94 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 html {
-  background-image: url('./images/background.png');
+
+  height: 100%;
+  position: relative;
+}
+
+
+
+
+.background {
+  background: url('./images/background.png');
   background-position: center;
   background-repeat: no-repeat;
   -webkit-background-size: cover; /* For WebKit*/
   -moz-background-size: cover;    /* Mozilla*/
   -o-background-size: cover;      /* Opera*/
   background-size: cover;
-  height: 100%;
-
+  height: 900px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.randomKidOne {
+  position: absolute;
+  top: 18%;
+  left: 10%;
 }
+
+.randomKidTwo {
+  position: absolute;
+  top: 18%;
+  right: 10%;
+}
+
+.randomKidThree {
+  position: absolute;
+  left: 45%;
+  bottom: 0%;
+}
+
+.logo {
+  position: absolute;
+  left: 38%;
+  top: 25%;
+}
+
+.playButton{
+  position: absolute;
+  left: 43%;
+  top: 45%;
+}
+
+.rainbow {
+  position: absolute;
+  top: 8%;
+  left: 5%;
+}
+
+#play {
+  border: none;
+  width: 300px;
+  height: 120px;
+  background: transparent url('./images/play_button.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color:'none';
+  cursor: pointer;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: boldFont;
+  src: url('./fonts/mutant-academy.bb.ttf');
+}
+
+@font-face {
+  font-family: emptyFont;
+  src: url('./fonts/mutant-academy.dc-bb.ttf');
+}
+
+.inComplete {
+  font-family: emptyFont;
+  color: orange;
+  font-size: 100px;
+}
+
+.completed {
+  font-family: boldFont;
+  color: orange;
+  font-size: 100px;
+}
+
+
+
