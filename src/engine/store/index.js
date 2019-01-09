@@ -1,4 +1,4 @@
-import { START_GAME } from './type';
+import { START_GAME, NEXT_WORD } from './type';
 
 const initalState = {
   game: false,
@@ -14,6 +14,13 @@ const reducer = (state = initalState, { type, payload }) => {
         game: true,
         completed: 0,
         current: payload,
+      };
+
+    case NEXT_WORD:
+      return {
+        ...state,
+        completed: payload.completed,
+        current: payload.word,
       };
     default:
       return state;

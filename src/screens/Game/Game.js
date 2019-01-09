@@ -3,15 +3,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Words from './Words';
+import nextWord from '../../engine/store/actions/nextWord';
 
 type Props = {
   current: string,
-
+  next: () => void,
+  completed: number,
 }
 class Game extends Component<Props> {
   constructor(props) {
     super(props);
     this.state = {
+      currentWord: props.current,
       words: props.current.split('').map(m => ({
         completed: false,
         word: m,
@@ -19,11 +22,23 @@ class Game extends Component<Props> {
     };
   }
 
+  static getDerivedStateFromProps(props, prevState) {
+    if (props.current.toUpperCase() !== prevState.currentWord.toUpperCase()) {
+      return {
+        currentWord: props.current,
+        words: props.current.split('').map(m => ({
+          completed: false,
+          word: m,
+        })),
+      };
+    }
+    return null;
+  }
+
   componentDidMount() {
     // eslint-disable-next-line
     window.addEventListener('keydown', this.eventHandler);
   }
-
 
   componentWillUnmount() {
     // eslint-disable-next-line
@@ -34,8 +49,14 @@ class Game extends Component<Props> {
     // eslint-disable-next-line
     const { words } = this.state;
     let count = 0;
+    // const totalLength = words.length;
+    // const completedLength = words.filter(m => m.completed).length;
+    // if (totalLength === completedLength && e.keyCode === 13) {
+    //   this.nextWord();
+    // }
+
     const newWord = words.map((m) => {
-      if (m.word === e.key && count < 1 && m.completed === false) {
+      if (m.word.toUpperCase() === e.key.toUpperCase() && count < 1 && m.completed === false) {
         count += 1;
         return {
           ...m,
@@ -50,13 +71,29 @@ class Game extends Component<Props> {
     });
   }
 
+  nextWord() {
+    const { completed, next } = this.props;
+    this.setState({
+      words: [],
+    }, () => next(completed));
+  }
+
   render() {
     const { words } = this.state;
-    return (<Words words={words} />);
+    const totalLength = words.length;
+    const completedLength = words.filter(m => m.completed).length;
+    return (
+      <div>
+        <Words words={words} />
+        {totalLength === completedLength ? (
+          <button type="button" onClick={() => this.nextWord()}> Next </button>) : null}
+      </div>
+    );
   }
 }
 
 
-const mapStateToProps = ({ current }) => ({ current });
+const mapStateToProps = ({ current, completed }) => ({ current, completed });
+const mapApiToProps = dispatch => ({ next: completed => dispatch(nextWord(completed)) });
 
-export default connect(mapStateToProps)(Game);
+export default connect(mapStateToProps, mapApiToProps)(Game);
