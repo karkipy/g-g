@@ -9,6 +9,7 @@ type Props = {
   current: string,
   next: () => void,
   completed: number,
+  image: string,
 }
 class Game extends Component<Props> {
   constructor(props) {
@@ -49,12 +50,6 @@ class Game extends Component<Props> {
     // eslint-disable-next-line
     const { words } = this.state;
     let count = 0;
-    // const totalLength = words.length;
-    // const completedLength = words.filter(m => m.completed).length;
-    // if (totalLength === completedLength && e.keyCode === 13) {
-    //   this.nextWord();
-    // }
-
     const newWord = words.map((m) => {
       if (m.word.toUpperCase() === e.key.toUpperCase() && count < 1 && m.completed === false) {
         count += 1;
@@ -81,9 +76,11 @@ class Game extends Component<Props> {
   render() {
     const { words } = this.state;
     const totalLength = words.length;
+    const { image, current } = this.props;
     const completedLength = words.filter(m => m.completed).length;
     return (
       <div>
+        <img alt={current} src={image} />
         <Words words={words} />
         {totalLength === completedLength ? (
           <button type="button" onClick={() => this.nextWord()}> Next </button>) : null}
@@ -93,7 +90,7 @@ class Game extends Component<Props> {
 }
 
 
-const mapStateToProps = ({ current, completed }) => ({ current, completed });
+const mapStateToProps = ({ current, completed, image }) => ({ current, completed, image });
 const mapApiToProps = dispatch => ({ next: completed => dispatch(nextWord(completed)) });
 
 export default connect(mapStateToProps, mapApiToProps)(Game);

@@ -1,3 +1,14 @@
+import apple from '../../images/ingame/apple.png';
+import ball from '../../images/ingame/ball.png';
+import cat from '../../images/ingame/cat.png';
+import dog from '../../images/ingame/dog.png';
+import eye from '../../images/ingame/eye.png';
+import fish from '../../images/ingame/fish.png';
+import gun from '../../images/ingame/gun.png';
+import horse from '../../images/ingame/horse.png';
+import icecream from '../../images/ingame/icecream.png';
+import joker from '../../images/ingame/joker.png';
+
 export const DB = {
   'A': 'Apple',
   'B': 'Ball',
@@ -54,6 +65,19 @@ export const mapper = {
   '23': 'X',
   '24': 'Y',
   '25': 'Z',
+};
+
+export const ImageMapper = {
+  'A': apple,
+  'B': ball,
+  'C': cat,
+  'D': dog,
+  'E': eye,
+  'F': fish,
+  'G': gun,
+  'H': horse,
+  'I': icecream,
+  'J': joker,
 };
 
 export default DB;

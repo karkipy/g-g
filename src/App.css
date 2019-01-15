@@ -70,12 +70,12 @@ html {
 
 @font-face {
   font-family: boldFont;
-  src: url('./fonts/mutant-academy.bb.ttf');
+  src: url('./fonts/bold.ttf');
 }
 
 @font-face {
   font-family: emptyFont;
-  src: url('./fonts/mutant-academy.dc-bb.ttf');
+  src: url('./fonts/empty.ttf');
 }
 
 .inComplete {

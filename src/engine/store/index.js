@@ -13,7 +13,8 @@ const reducer = (state = initalState, { type, payload }) => {
         ...state,
         game: true,
         completed: 0,
-        current: payload,
+        current: payload.word,
+        image: payload.image,
       };
 
     case NEXT_WORD:
@@ -21,6 +22,7 @@ const reducer = (state = initalState, { type, payload }) => {
         ...state,
         completed: payload.completed,
         current: payload.word,
+        image: payload.image,
       };
     default:
       return state;
