@@ -79,8 +79,10 @@ class Game extends Component<Props> {
     const { image, current } = this.props;
     const completedLength = words.filter(m => m.completed).length;
     return (
-      <div>
-        <img alt={current} src={image} />
+      <div className="container">
+        <div className="picture">
+          <img alt={current} src={image} />
+        </div>
         <Words words={words} />
         {totalLength === completedLength ? (
           <button type="button" onClick={() => this.nextWord()}> Next </button>) : null}

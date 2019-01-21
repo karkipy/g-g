@@ -9,6 +9,7 @@ import Plane from '../../images/plane.png';
 import Rocket from '../../images/rocket.png';
 import Logo from '../../images/typekids_logo.png';
 import RainBow from '../../images/rainbow.png';
+import Background from '../../images/background.png';
 
 type Props = {
   start: () => void,
@@ -16,6 +17,7 @@ type Props = {
 
 const Home = ({ start }: Props) => (
   <div className="background">
+    <img src={Background} alt="background" id="bg" />
     <div className="randomKidOne">
       <img src={Rocket} alt="Kid in a rocket" height="150" />
     </div>

@@ -18,7 +18,7 @@ export const DB = {
   'F': 'Fish',
   'G': 'Gun',
   'H': 'Horse',
-  'I': 'Ice Cream',
+  'I': 'IceCream',
   'J': 'Joker',
   'K': 'King',
   'L': 'Lion',
