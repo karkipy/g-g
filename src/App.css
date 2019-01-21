@@ -9,8 +9,8 @@ body, html {
   top: 0;
   left: 0;
   /* Preserve aspet ratio */
-  min-width: 90%;
-  min-height: 80%;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .randomKidOne {
@@ -93,4 +93,36 @@ body, html {
   margin-left: -100px;
 }
 
+.prev-image {
+  position: absolute;
+}
+
+.prev-button {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  padding: 0;
+  border: none;
+  background: none;
+  width: 210px;
+  height: 210px;
+  cursor: pointer;
+  background-image: url('./images/buttons/prev.png');
+  background-repeat: no-repeat;
+}
+
+
+.next-button {
+  position: absolute;
+  top: 5%;
+  left: 85%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 210px;
+  height: 210px;
+  background-image: url('./images/buttons/next.png');
+  background-repeat: no-repeat;
+}
 

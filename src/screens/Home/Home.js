@@ -17,7 +17,7 @@ type Props = {
 
 const Home = ({ start }: Props) => (
   <div className="background">
-    <img src={Background} alt="background" id="bg" />
+    <img src={Background} alt="background" id="bg" height="900" />
     <div className="randomKidOne">
       <img src={Rocket} alt="Kid in a rocket" height="150" />
     </div>

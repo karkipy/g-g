@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Words from './Words';
 import nextWord from '../../engine/store/actions/nextWord';
+import { PrevButton, NextButton } from './Buttons';
+import PrevImages from './Images';
 
 type Props = {
   current: string,
@@ -21,6 +23,7 @@ class Game extends Component<Props> {
         word: m,
       })),
     };
+    this.nextWord = this.nextWord.bind(this);
   }
 
   static getDerivedStateFromProps(props, prevState) {
@@ -79,13 +82,16 @@ class Game extends Component<Props> {
     const { image, current } = this.props;
     const completedLength = words.filter(m => m.completed).length;
     return (
-      <div className="container">
-        <div className="picture">
-          <img alt={current} src={image} />
+      <div>
+        <PrevButton />
+        {totalLength === completedLength ? <NextButton onClick={() => this.nextWord()} /> : null}
+        <div className="container">
+          <PrevImages />
+          <div className="picture">
+            <img alt={current} src={image} />
+          </div>
+          <Words words={words} />
         </div>
-        <Words words={words} />
-        {totalLength === completedLength ? (
-          <button type="button" onClick={() => this.nextWord()}> Next </button>) : null}
       </div>
     );
   }

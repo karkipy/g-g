@@ -3,6 +3,7 @@ import { START_GAME, NEXT_WORD } from './type';
 const initalState = {
   game: false,
   completed: -1,
+  images: [],
 };
 
 
@@ -18,10 +19,12 @@ const reducer = (state = initalState, { type, payload }) => {
       };
 
     case NEXT_WORD:
+      const prevImage = state.image;
       return {
         ...state,
         completed: payload.completed,
         current: payload.word,
+        images: [...state.images, prevImage],
         image: payload.image,
       };
     default:
