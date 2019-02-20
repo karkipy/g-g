@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 import startGame from '../../engine/store/actions/startGame';
 
 // Images
-import Horse from '../../images/horse.png';
-import Plane from '../../images/plane.png';
-import Rocket from '../../images/rocket.png';
-import Logo from '../../images/typekids_logo.png';
-import RainBow from '../../images/rainbow.png';
-import Background from '../../images/background.png';
+import Horse from '../../images/home/horse.png';
+import Plane from '../../images/home/plane.png';
+import Rocket from '../../images/home/rocket.png';
+import Logo from '../../images/home/typekids_logo.png';
+import RainBow from '../../images/home/rainbow.png';
+import Background from '../../images/home/background.png';
 
 type Props = {
   start: () => void,

@@ -8,6 +8,23 @@ import gun from '../../images/ingame/gun.png';
 import horse from '../../images/ingame/horse.png';
 import icecream from '../../images/ingame/icecream.png';
 import joker from '../../images/ingame/joker.png';
+import king from '../../images/ingame/king.png';
+import lion from '../../images/ingame/lion.png';
+import moon from '../../images/ingame/moon.png';
+import nine from '../../images/ingame/nine.png';
+import ox from '../../images/ingame/ox.png';
+import pig from '../../images/ingame/pig.png';
+import queen from '../../images/ingame/queen.png';
+import rain from '../../images/ingame/rain.png';
+import school from '../../images/ingame/school.png';
+import train from '../../images/ingame/train.png';
+import umbrella from '../../images/ingame/umbrella.png';
+import vechile from '../../images/ingame/vechile.png';
+import watermelon from '../../images/ingame/watermelon.png';
+import xylophone from '../../images/ingame/xylophone.png';
+import yarn from '../../images/ingame/yarn.png';
+import zebra from '../../images/ingame/zebra.png';
+
 
 export const DB = {
   'A': 'Apple',
@@ -78,6 +95,22 @@ export const ImageMapper = {
   'H': horse,
   'I': icecream,
   'J': joker,
+  'K': king,
+  'L': lion,
+  'M': moon,
+  'N': nine,
+  'O': ox,
+  'P': pig,
+  'Q': queen,
+  'R': rain,
+  'S': school,
+  'T': train,
+  'U': umbrella,
+  'V': vechile,
+  'W': watermelon,
+  'X': xylophone,
+  'Y': yarn,
+  'Z': zebra,
 };
 
 export default DB;
