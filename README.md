@@ -1,3 +1,9 @@
 ## TypeKids (g-g)
 
-A simple typeshala game made in react and electron.
+A typeshala type application.
+
+## To start
+
+1) yarn
+2) yarn start
+3) yarn electron
