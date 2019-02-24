@@ -15,7 +15,7 @@ function createWindow() {
   mainWindow.setFullScreen(true);
 
   // and load the index.html of the app.
-  const startUrl = 'http://localhost:3000/' || url.format({
+  const startUrl = url.format({
     pathname: path.join(__dirname, '/../build/index.html'),
     protocol: 'file:',
     slashes: true,
