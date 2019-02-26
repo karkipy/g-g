@@ -2,6 +2,10 @@
 
 A typeshala type application.
 
+## Installation
+
+To download app https://github.com/karkipy/g-g/releases/tag/v0.1.1-alpha
+
 ## To start
 
 1) yarn
