@@ -4,7 +4,7 @@ A typeshala type application. Something I made for my baby sisters to get used t
 
 ## Installation
 
-Download app <a href="https://github.com/karkipy/g-g/releases/tag/v0.1.1> here</a>
+Download app <a href="https://github.com/karkipy/g-g/releases/tag/v0.1.1"> here</a>
 
 ## From Source Code
 
