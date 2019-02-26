@@ -108,7 +108,7 @@ class Game extends Component<Props> {
 
     return (
       <div>
-        {completed && <PrevButton onClick={() => this.prevWord()} />}
+        {completed > 0 ? <PrevButton onClick={() => this.prevWord()} /> : null}
         {totalLength === completedLength ? <NextButton onClick={() => this.nextWord()} /> : null}
         <div className="container">
           <div className="picture">
