@@ -1,9 +1,10 @@
 import React from 'react';
 
-const PrevButton = () => (
+const PrevButton = ({ onClick }) => (
   <button
     type="button"
     className="prev-button"
+    onClick={() => onClick()}
   />
 );
 

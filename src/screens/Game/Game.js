@@ -4,12 +4,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Words from './Words';
 import nextWord from '../../engine/store/actions/nextWord';
+import prevWord from '../../engine/store/actions/prevWord';
+import startGame from '../../engine/store/actions/startGame';
 import { PrevButton, NextButton } from './Buttons';
-import PrevImages from './Images';
 
 type Props = {
   current: string,
   next: () => void,
+  prev: () => void,
   completed: number,
   image: string,
 }
@@ -76,17 +78,39 @@ class Game extends Component<Props> {
     }, () => next(completed));
   }
 
+  prevWord() {
+    const { completed, prev } = this.props;
+    this.setState({
+      words: [],
+    }, () => prev(completed));
+  }
+
   render() {
     const { words } = this.state;
     const totalLength = words.length;
-    const { image, current } = this.props;
+    const { image, current, completed, start } = this.props;
     const completedLength = words.filter(m => m.completed).length;
+
+    if (completed > 0) {
+      return (
+        <div>
+          <div className="container completed">
+            Game Over, <br />
+            Play again ?
+            <br />
+            <div className="playButton">
+              <button id="play" type="button" onClick={() => start()} />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div>
-        <PrevButton />
+        {completed && <PrevButton onClick={() => this.prevWord()} />}
         {totalLength === completedLength ? <NextButton onClick={() => this.nextWord()} /> : null}
         <div className="container">
-          <PrevImages />
           <div className="picture">
             <img alt={current} src={image} />
           </div>
@@ -99,6 +123,10 @@ class Game extends Component<Props> {
 
 
 const mapStateToProps = ({ current, completed, image }) => ({ current, completed, image });
-const mapApiToProps = dispatch => ({ next: completed => dispatch(nextWord(completed)) });
+const mapApiToProps = dispatch => ({
+  next: completed => dispatch(nextWord(completed)),
+  prev: completed => dispatch(prevWord(completed)),
+  start: () => dispatch(startGame()),
+});
 
 export default connect(mapStateToProps, mapApiToProps)(Game);
