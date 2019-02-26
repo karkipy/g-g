@@ -91,7 +91,7 @@ class Game extends Component<Props> {
     const { image, current, completed, start } = this.props;
     const completedLength = words.filter(m => m.completed).length;
 
-    if (completed > 0) {
+    if (completed > 25) {
       return (
         <div>
           <div className="container completed">
