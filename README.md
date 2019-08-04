@@ -1,6 +1,6 @@
 ## TypeKids (g-g)
 
-A typeshala type application. Something I made for my baby sisters to get used to in typing.
+A typeshala type application. Something I made for my baby sisters to get used to in typing. (g-g , initals of my baby sisters)
 
 ## Installation
 
